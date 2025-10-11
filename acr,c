@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#define PI 3.14159 // Constant using #define
+
+const int MAX_RADIUS = 100; // Constant using const
+
+int globalCount = 0; // Global variable
+
+void calculateArea(int radius) {
+    if (radius > MAX_RADIUS) {
+        printf("Radius exceeds maximum allowed value of %d\n", MAX_RADIUS);
+        return;
+    }
+
+    float area = PI * radius * radius; // Local variable
+    globalCount++;
+    printf("Area of circle with radius %d is %.2f\n", radius, area);
+}
+
+int main() {
+    int radius = 10; // Local variable
+    calculateArea(radius);
+    printf("Function called %d times\n", globalCount);
+    return 0;
+}
+
+output:
+Area of circle with radius 10 is 314.16
+Function called 1 times
