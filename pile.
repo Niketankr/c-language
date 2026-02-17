@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    
+    
+    printf("Enter number of records: ");
+    scanf("%d", &n);
+    
+    int total[n];
+    
+    
+    printf("Enter Total values:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &total[i]);
+    }
+    
+    
+    int A = 0, B = 0, C = 0;
+    
+    
+    for(i = 0; i < n; i++) {
+        
+    
+    
+        if(total[i] > 250) {
+            A++;
+        }
+        
+    
+        else if(total[i] > 200 && total[i] < 250) {
+            B++;
+        }
+        
+    
+        else if(total[i] < 200) {
+            C++;
+        }
+        
+       
+    }
+    
+    
+    printf("A (Total > 250) = %d\n", A);
+    printf("B (200 < Total < 250) = %d\n", B);
+    printf("C (Total < 200) = %d\n", C);
+    
+    return 0;
+}
+
+
+output:
+
+Enter number of records: 5
+Enter Total values:
+20
+12
+54
+65
+89
+A (Total > 250) = 0
+B (200 < Total < 250) = 0
+C (Total < 200) = 5
+
+Enter number of records: 5
+Enter Total values:
+250
+236
+566
+654
+45
+A (Total > 250) = 2
+B (200 < Total < 250) = 1
+C (Total < 200) = 1
